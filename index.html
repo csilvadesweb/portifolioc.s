@@ -16,8 +16,8 @@
             color: white;
             text-align: center;
         }
-        header {
-            background: #1f1f1f;
+        header, footer {
+            background: #003366;
             padding: 15px;
         }
         nav ul {
@@ -36,20 +36,16 @@
             font-size: 36px;
             white-space: nowrap;
             overflow: hidden;
-            border-right: 3px solid white;
             display: inline-block;
-            animation: typing 3s steps(30, end) forwards, blink 0.75s infinite;
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+            border-right: 3px solid white;
+            animation: blink 0.75s infinite;
         }
         @keyframes blink {
             50% { border-color: transparent; }
         }
-        .btn {
+        .btn, .project-card a {
             display: inline-block;
-            background: #007bff;
+            background: #003366;
             color: white;
             padding: 10px 20px;
             margin-top: 10px;
@@ -61,32 +57,17 @@
             border-bottom: 1px solid #333;
         }
         .project-card {
-            background: #292929;
+            background: #003366;
             padding: 10px;
             margin: 10px;
             display: inline-block;
             border-radius: 5px;
         }
         .project-card a {
-            color: #00bfff;
+            color: white;
             text-decoration: none;
         }
-        form input, form textarea, form button {
-            display: block;
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-        }
-        form button {
-            background: #007bff;
-            color: white;
-            cursor: pointer;
-        }
         footer {
-            background: #1f1f1f;
-            padding: 10px;
             margin-top: 20px;
         }
         @media (max-width: 600px) {
@@ -94,9 +75,6 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-            }
-            nav ul li {
-                margin: 10px 0;
             }
             .project-card {
                 display: block;
@@ -134,9 +112,8 @@
 <section id="projects">
     <h2>Projetos Realizados</h2>
     <div class="project-card"><a href="https://csilvadesweb.github.io/curso/" target="_blank">Curso</a></div>
-<div class="project-card"><a href="https://csilvadesweb.github.io/barbearia1/" target="_blank">Barbearia</a></div>
-    <div class="project-card"><a href="https://csilvadesweb.github.io/academia/index.html" target="_blank">Academia</a></div>
-    <div class="project-card"><a href="https://csilvadesweb.github.io/UPGservicos-Upgrade-Servicos/" target="_blank">UPGservicos - Upgrade Serviços</a></div>
+    <div class="project-card"><a href="https://csilvadesweb.github.io/barbearia1/" target="_blank">Barbearia</a></div>
+    <div class="project-card"><a href="https://csilvadesweb.github.io/UPGservicos-Upgrade-Servios/" target="_blank">UPGservicos - Upgrade Serviços</a></div>
 </section>
 
 <section id="services">
@@ -150,17 +127,14 @@
 
 <section id="blog">
     <h2>Por que ter um site profissional?</h2>
-    <p>Atualmente, a presença digital é essencial para qualquer negócio. Um site profissional oferece credibilidade, aumenta a visibilidade da sua marca e permite atrair mais clientes. Além disso, um site bem estruturado e otimizado melhora o ranqueamento nos motores de busca, como o Google, aumentando suas chances de conversão.</p>
+<p>No mundo digital de hoje, ter um site profissional é essencial para qualquer negócio. Ele serve como um cartão de visitas online, aumentando a credibilidade e visibilidade da sua marca.</p>
+    <p>Um site bem desenvolvido e otimizado ajuda a atrair novos clientes, melhorar sua presença nos mecanismos de busca (como o Google) e fornecer informações importantes sobre seus produtos e serviços.</p>
+    <p>Se você quer se destacar no mercado, investir em um site profissional é um passo fundamental para o sucesso do seu negócio.</p>
 </section>
 
 <section id="contact">
     <h2>Entre em Contato</h2>
-    <form id="contact-form">
-        <input type="text" id="name" name="name" placeholder="Seu nome" required>
-        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
-        <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar</button>
-    </form>
+    <a href="https://wa.me/5511991677373?text=Olá,%20quero%20fazer%20um%20orçamento!" class="btn">Fale comigo no WhatsApp</a>
 </section>
 
 <footer>
@@ -179,29 +153,10 @@
             if (index < text.length) {
                 textElement.innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeWriter, 100);
+                setTimeout(typeWriter, 150);
             }
         }
         typeWriter();
-    });
-
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        let name = document.getElementById("name").value.trim();
-        let email = document.getElementById("email").value.trim();
-        let message = document.getElementById("message").value.trim();
-
-        if (name === ""  email === ""  message === "") {
-            alert("Por favor, preencha todos os campos!");
-            return;
-        }
-
-        let phoneNumber = "5511991677373";
-        let whatsappMessage = Olá, meu nome é ${name}. Meu e-mail: ${email}. Mensagem: ${message};
-        let whatsappURL = https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)};
-
-        window.location.href = whatsappURL;
     });
 </script>
 
