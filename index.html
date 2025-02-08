@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - C.Silva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+        header {
+            background: #1f1f1f;
+            padding: 15px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        #welcome h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards, blink 0.75s infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        section {
+            padding: 30px;
+            border-bottom: 1px solid #333;
+        }
+        .project-card {
+            background: #292929;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        .project-card a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+        form input, form textarea, form button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        footer {
+            background: #1f1f1f;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#about">Sobre Mim</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="welcome">
+    <h1 id="typing-text"></h1>
+    <p>Desenvolvedor Web Freelancer | <a href="mailto:csdesweb@gmail.com">csdesweb@gmail.com</a></p>
+    <a href="https://wa.me/5511991677373?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento!" class="btn">Entre em Contato via WhatsApp</a>
+</section>
+
+<section id="about">
+    <h2>Sobre Mim</h2>
+    <p>Sou C.Silva, um desenvolvedor web com experiência em criação de sites modernos e responsivos. Tenho paixão por tecnologia e busco sempre entregar resultados de qualidade.</p>
+</section>
+
+<section id="projects">
+    <h2>Projetos Realizados</h2>
+    <div class="project-card"><a href="https://csilvadesweb.github.io/curso/" target="_blank">Curso</a></div>
+    <div class="project-card"><a href="https://csilvadesweb.github.io/barbearia1/" target="_blank">Barbearia</a></div>
+    <div class="project-card"><a href="https://csilvadesweb.github.io/academia/index.html" target="_blank">Academia</a></div>
+    <div class="project-card"><a href="https://csilvadesweb.github.io/UPGservicos-Upgrade-Servios/" target="_blank"UPGservicos - Upgrade Serviços</a></div>
+</section>
+
+<section id="services">
+    <h2>Serviços</h2>
+    <ul>
+        <li>Desenvolvimento Web Responsivo</li>
+        <li>SEO e Otimização de Sites</li>
+        <li>Consultoria e Suporte Técnico</li>
+    </ul>
+</section>
+<section id="blog">
+    <h2>Por que ter um site profissional?</h2>
+    <p>Atualmente, a presença digital é essencial para qualquer negócio. Um site profissional oferece credibilidade, aumenta a visibilidade da sua marca e permite atrair mais clientes. Além disso, um site bem estruturado e otimizado melhora o ranqueamento nos motores de busca, como o Google, aumentando suas chances de conversão.</p>
+</section>
+
+<section id="contact">
+    <h2>Entre em Contato</h2>
+    <form id="contact-form">
+        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+        <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 C.Silva. Todos os direitos reservados.</p>
+    <p>Contato: <a href="mailto:csdesweb@gmail.com">csdesweb@gmail.com</a> | 
+       <a href="https://wa.me/5511991677373" target="_blank">WhatsApp</a></p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const textElement = document.getElementById("typing-text");
+        const text = "Olá, sou C.Silva";
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                textElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        typeWriter();
+    });
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        if (name === ""  email === ""  message === "") {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
+        let phoneNumber = "5511991677373";
+        let whatsappMessage = Olá, meu nome é ${name}. Meu e-mail: ${email}. Mensagem: ${message};
+        let whatsappURL = https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)};
+
+        window.location.href = whatsappURL;
+    });
+</script>
+
+</body>
+</html>
