@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - C.Silva</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
             background-color: #121212;
             color: white;
             text-align: center;
@@ -30,13 +33,11 @@
             text-decoration: none;
         }
         #welcome h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-            display: inline-block;
+            font-size: 36px;
             white-space: nowrap;
             overflow: hidden;
             border-right: 3px solid white;
-            width: 0;
+            display: inline-block;
             animation: typing 3s steps(30, end) forwards, blink 0.75s infinite;
         }
         @keyframes typing {
@@ -76,10 +77,32 @@
             margin: 10px auto;
             padding: 10px;
             border-radius: 5px;
+            border: none;
+        }
+        form button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
         }
         footer {
             background: #1f1f1f;
             padding: 10px;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .project-card {
+                display: block;
+                width: 90%;
+                margin: 10px auto;
+            }
         }
     </style>
 </head>
@@ -111,9 +134,9 @@
 <section id="projects">
     <h2>Projetos Realizados</h2>
     <div class="project-card"><a href="https://csilvadesweb.github.io/curso/" target="_blank">Curso</a></div>
-    <div class="project-card"><a href="https://csilvadesweb.github.io/barbearia1/" target="_blank">Barbearia</a></div>
+<div class="project-card"><a href="https://csilvadesweb.github.io/barbearia1/" target="_blank">Barbearia</a></div>
     <div class="project-card"><a href="https://csilvadesweb.github.io/academia/index.html" target="_blank">Academia</a></div>
-    <div class="project-card"><a href="https://csilvadesweb.github.io/UPGservicos-Upgrade-Servios/" target="_blank"UPGservicos - Upgrade Serviços</a></div>
+    <div class="project-card"><a href="https://csilvadesweb.github.io/UPGservicos-Upgrade-Servicos/" target="_blank">UPGservicos - Upgrade Serviços</a></div>
 </section>
 
 <section id="services">
@@ -124,6 +147,7 @@
         <li>Consultoria e Suporte Técnico</li>
     </ul>
 </section>
+
 <section id="blog">
     <h2>Por que ter um site profissional?</h2>
     <p>Atualmente, a presença digital é essencial para qualquer negócio. Um site profissional oferece credibilidade, aumenta a visibilidade da sua marca e permite atrair mais clientes. Além disso, um site bem estruturado e otimizado melhora o ranqueamento nos motores de busca, como o Google, aumentando suas chances de conversão.</p>
